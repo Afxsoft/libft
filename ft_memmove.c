@@ -3,23 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aouloube <aouloube@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 14:50:11 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/25 15:57:19 by aouloube         ###   ########.fr       */
+/*   Created: 2014/11/03 13:51:30 by aouloube          #+#    #+#             */
+/*   Updated: 2014/11/04 16:06:30 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if(dst)
-		return (dst);
-	if(src)
-		return (dst);
-	if (len)
-		return (dst);
-	return (dst);
-}
+	unsigned char	*desti;
+	unsigned char	*srce;
+	unsigned int	i;
+	unsigned char	*tmp;
 
+	desti = (unsigned char *)dest;
+	srce = (unsigned char *)src;
+	i = 0;
+	tmp = (unsigned char *)malloc(sizeof(unsigned char) * n);
+	while (n > i)
+	{
+		tmp[i] = srce[i];
+		i++;
+	}
+	i = 0;
+	while (n > i)
+	{
+		desti[i] = tmp[i];
+		i++;
+	}
+	return (dest);
+}

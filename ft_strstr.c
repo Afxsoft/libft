@@ -5,17 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 10:08:20 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/25 16:43:33 by aouloube         ###   ########.fr       */
+/*   Created: 2014/11/05 13:17:37 by aouloube          #+#    #+#             */
+/*   Updated: 2014/11/05 13:17:46 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strstr(char *s1, char *s2)
+char	*ft_strstr(const char *a, const char *b)
 {
-	if (s1)
-		if(s2)
-			return (s1);
-	return ((char *) s1);
+	int		i;
+	int		u;
+
+	i = 0;
+	u = 0;
+	if (b[u] == '\0')
+		return ((char*)(a));
+	while (a[i] != '\0')
+	{
+		if (a[i] != b[u])
+			i++;
+		else
+		{
+			while (a[i] == b[u] && a[i] != '\0' && b[u] != '\0')
+			{
+				i++;
+				u++;
+			}
+			if (b[u] == '\0')
+				return ((char*)a + (i - u));
+			i = (i - u) + 1;
+			u = 0;
+		}
+	}
+	return (0);
 }

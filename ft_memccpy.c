@@ -3,34 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aouloube <aouloube@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 12:07:30 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/25 15:51:48 by aouloube         ###   ########.fr       */
+/*   Created: 2014/11/03 13:52:20 by aouloube          #+#    #+#             */
+/*   Updated: 2014/11/03 13:52:49 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	int		i;
-	char	*dest;
+	unsigned char	*tmp;
+	unsigned char	*srce;
+	unsigned int	i;
 
+	tmp = (unsigned char *)dest;
+	srce = (unsigned char *)src;
 	i = 0;
-	dest = (char *) dst;
-	src = (char *) src;
-	if (n)
-		return(dst);
-	while (dest[i])
+	while (i < n && srce[i] != c)
 	{
-		if (dest[i] == c)
-		{
-			if(dest[i + 1])
-				return ((void *) dest);
-			else if (dest[i + 1] == '\0')
-				return (NULL);
-		}
+		tmp[i] = srce[i];
+		i++;
 	}
-	return (dst);
+	if (srce[i] == c)
+	{
+		tmp[i] = c;
+		i++;
+		return (dest + i);
+	}
+	return (0);
 }
