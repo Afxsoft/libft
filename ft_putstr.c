@@ -6,17 +6,18 @@
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:50:15 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/25 12:16:01 by aouloube         ###   ########.fr       */
+/*   Updated: 2015/11/26 16:28:02 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
 	int		i;
+
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		ft_putchar(str[i]);
 		i++;

@@ -6,13 +6,13 @@
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 16:40:09 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/25 12:23:15 by aouloube         ###   ########.fr       */
+/*   Updated: 2015/11/26 16:12:59 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strncat(char *dest, const char *src, size_t n)
+char	*ft_strncat(char *dest, const char *src, size_t n)
 {
 	int		i;
 	int		size;

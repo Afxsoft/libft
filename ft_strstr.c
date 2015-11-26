@@ -5,36 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 13:17:37 by aouloube          #+#    #+#             */
-/*   Updated: 2014/11/05 13:17:46 by aouloube         ###   ########.fr       */
+/*   Created: 2015/11/26 15:09:38 by aouloube          #+#    #+#             */
+/*   Updated: 2015/11/26 17:16:35 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(const char *a, const char *b)
+#include "libft.h"
+
+char	*ft_strstr(const char *s1, const char *s2)
 {
 	int		i;
-	int		u;
+	int		y;
 
 	i = 0;
-	u = 0;
-	if (b[u] == '\0')
-		return ((char*)(a));
-	while (a[i] != '\0')
+	y = 0;
+	if (s2[y] == '\0')
+		return ((char*)(s1));
+	while (s1[i])
 	{
-		if (a[i] != b[u])
+		if (s1[i] != s2[y])
 			i++;
 		else
 		{
-			while (a[i] == b[u] && a[i] != '\0' && b[u] != '\0')
+			while (s1[i] == s2[y] && s1[i] != '\0' && s2[y] != '\0')
 			{
 				i++;
-				u++;
+				y++;
 			}
-			if (b[u] == '\0')
-				return ((char*)a + (i - u));
-			i = (i - u) + 1;
-			u = 0;
+			if (s2[y] == '\0')
+				return ((char*)s1 + (i - y));
+			i = (i - y) + 1;
+			y = 0;
 		}
 	}
-	return (0);
+	return (NULL);
 }

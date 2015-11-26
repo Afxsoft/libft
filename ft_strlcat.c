@@ -6,7 +6,7 @@
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:04:43 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/25 15:20:45 by aouloube         ###   ########.fr       */
+/*   Updated: 2015/11/26 18:12:48 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 		n--;
 	}
 	dest[size + i] = '\0';
-	return (n);
+	if (ft_strlen(dest) < n)
+		return (ft_strlen(src) - n);
+	else
+		return (ft_strlen(dest) - ft_strlen(src));
 }

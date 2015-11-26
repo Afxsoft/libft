@@ -6,7 +6,7 @@
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 15:06:15 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/25 12:17:16 by aouloube         ###   ########.fr       */
+/*   Updated: 2015/11/26 16:17:37 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strcpy(char *dst, const char *src)
 {
 	int		i;
-	
+
 	i = 0;
 	while (src[i])
 	{

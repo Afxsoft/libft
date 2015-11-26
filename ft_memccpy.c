@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aouloube <aouloube@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 13:52:20 by aouloube          #+#    #+#             */
-/*   Updated: 2014/11/03 13:52:49 by aouloube         ###   ########.fr       */
+/*   Created: 2015/11/26 15:35:54 by aouloube          #+#    #+#             */
+/*   Updated: 2015/11/26 15:37:18 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	unsigned char	*tmp;
-	unsigned char	*srce;
-	unsigned int	i;
+	char	*tmp;
+	char	*srce;
+	size_t	i;
 
-	tmp = (unsigned char *)dest;
-	srce = (unsigned char *)src;
+	tmp = (char *)dest;
+	srce = (char *)src;
 	i = 0;
 	while (i < n && srce[i] != c)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aouloube <aouloube@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 13:43:34 by aouloube          #+#    #+#             */
-/*   Updated: 2014/11/05 13:13:04 by aouloube         ###   ########.fr       */
+/*   Created: 2015/11/26 15:39:00 by aouloube          #+#    #+#             */
+/*   Updated: 2015/11/26 16:58:03 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	cur = (unsigned char *)s;
 	while (n--)
 	{
-		if (*cur == c)
-			return (cur);
-		if (n)
-			cur++;
+		if (*cur == (unsigned char)c)
+			return ((unsigned char *)cur);
+		cur++;
 	}
 	return (NULL);
 }
