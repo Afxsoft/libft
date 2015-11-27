@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 13:50:15 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/27 11:06:36 by aouloube         ###   ########.fr       */
+/*   Created: 2015/11/27 11:33:43 by aouloube          #+#    #+#             */
+/*   Updated: 2015/11/27 16:05:00 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *str)
+char    *ft_strmap(char const *s, char (*f)(char))
 {
 	int		i;
+	char	*w;
 
 	i = 0;
-	while (str[i])
+	w = ft_strnew(ft_strlen(s));
+	while (s[i])
 	{
-		ft_putchar(str[i]);
+		w[i] = (*f)(s[i]);
 		i++;
 	}
+	return (w);
 }
