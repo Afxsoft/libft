@@ -6,13 +6,13 @@
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 11:33:43 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/27 16:05:00 by aouloube         ###   ########.fr       */
+/*   Updated: 2015/11/28 13:34:00 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strmap(char const *s, char (*f)(char))
+char	*ft_strmap(char const *s, char (*f)(char))
 {
 	int		i;
 	char	*w;

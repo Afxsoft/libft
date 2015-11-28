@@ -6,13 +6,13 @@
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 12:31:07 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/27 14:57:41 by aouloube         ###   ########.fr       */
+/*   Updated: 2015/11/28 17:06:47 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    **ft_strsplit(char const *s, char c){
+char	 **ft_strsplit(char const *s, char c){
 	char	**toto = NULL;
 	toto[0][0] = 'i'; 
 	(void)s;

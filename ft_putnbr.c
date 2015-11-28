@@ -6,13 +6,13 @@
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 12:47:41 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/27 20:40:08 by aouloube         ###   ########.fr       */
+/*   Updated: 2015/11/28 13:45:11 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putnbr(int n)
+void	ft_putnbr(int n)
 {
 	ft_putstr(ft_itoa(n));
 }

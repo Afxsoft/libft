@@ -6,13 +6,13 @@
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 11:38:40 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/27 16:45:27 by aouloube         ###   ########.fr       */
+/*   Updated: 2015/11/28 13:41:07 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_strequ(char const *s1, char const *s2)
+int		ft_strequ(char const *s1, char const *s2)
 {
 	int		value;
 

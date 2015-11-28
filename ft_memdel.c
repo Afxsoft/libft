@@ -6,13 +6,13 @@
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 11:12:06 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/27 15:15:15 by aouloube         ###   ########.fr       */
+/*   Updated: 2015/11/28 13:48:21 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_memdel(void **ap)
+void	ft_memdel(void **ap)
 {
 	free(*ap);
 	*ap = NULL;

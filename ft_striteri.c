@@ -6,17 +6,17 @@
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 11:24:53 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/27 15:45:38 by aouloube         ###   ########.fr       */
+/*   Updated: 2015/11/28 13:42:31 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-   	int     i;
+	int		i;
 
-	 i = 0;
+	i = 0;
 	while (s[i])
 	{
 		(*f)(i, &s[i]);
