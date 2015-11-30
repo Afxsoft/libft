@@ -6,7 +6,7 @@
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 11:07:09 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/28 13:47:52 by aouloube         ###   ########.fr       */
+/*   Updated: 2015/11/30 18:53:14 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_memalloc(size_t size)
 {
-	char	*str;
+	void	*m;
 
-	str = (char *)malloc(sizeof(char) * size);
-	if (str)
-		return (str);
-	else
+	if (size == 0)
 		return (NULL);
+	else
+		m = malloc(size);
+	return (m);
 }
