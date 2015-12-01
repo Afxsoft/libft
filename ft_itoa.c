@@ -6,13 +6,13 @@
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 12:34:52 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/30 16:17:55 by aouloube         ###   ########.fr       */
+/*   Updated: 2015/12/01 20:09:12 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_maxnegint(int i)
+static int		ft_maxnegint(int i)
 {
 	if (i == -2147483648)
 		return (1);
@@ -20,7 +20,7 @@ int		ft_maxnegint(int i)
 		return (0);
 }
 
-int		ft_itoa_size(int n)
+static int		ft_itoa_size(int n)
 {
 	int		i;
 
@@ -33,7 +33,7 @@ int		ft_itoa_size(int n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char	*str;
 	int		r;
