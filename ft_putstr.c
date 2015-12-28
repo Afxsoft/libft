@@ -6,7 +6,7 @@
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:50:15 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/27 11:06:36 by aouloube         ###   ########.fr       */
+/*   Updated: 2015/12/28 12:21:31 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,5 @@
 
 void	ft_putstr(char const *str)
 {
-	int		i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
+	write(1, str, ft_strlen(str));
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 11:33:43 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/28 13:34:00 by aouloube         ###   ########.fr       */
+/*   Created: 2015/12/28 12:16:33 by aouloube          #+#    #+#             */
+/*   Updated: 2015/12/28 12:16:35 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char	*w;
 
 	i = 0;
+	if (s == NULL || f == NULL)
+		return (NULL);
 	w = ft_strnew(ft_strlen(s));
+	if (w == NULL)
+		return (NULL);
 	while (s[i])
 	{
 		w[i] = (*f)(s[i]);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 14:13:15 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/26 16:15:40 by aouloube         ###   ########.fr       */
+/*   Created: 2015/12/28 12:16:16 by aouloube          #+#    #+#             */
+/*   Updated: 2015/12/28 12:16:18 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strdup(const char *str)
 
 	size = ft_strlen(str);
 	mstr = (char *)malloc(sizeof(char) * size + 1);
+	if (!mstr)
+		return (NULL);
 	i = 0;
 	while (str[i])
 	{

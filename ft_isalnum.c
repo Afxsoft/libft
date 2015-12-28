@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 17:17:53 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/26 16:40:11 by aouloube         ###   ########.fr       */
+/*   Created: 2015/12/28 12:13:47 by aouloube          #+#    #+#             */
+/*   Updated: 2015/12/28 12:13:53 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,5 @@
 
 int		ft_isalnum(int c)
 {
-	if ((c >= 65 && c <= 122) || (c >= 48 && c <= 57))
-		return (1);
-	else
-		return (0);
+	return ((ft_isalpha(c) || ft_isdigit(c)));
 }

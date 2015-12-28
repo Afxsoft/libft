@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 11:07:09 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/30 18:53:14 by aouloube         ###   ########.fr       */
+/*   Created: 2015/12/28 12:14:50 by aouloube          #+#    #+#             */
+/*   Updated: 2015/12/28 12:14:52 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void	*m;
+	int *m;
 
 	if (size == 0)
 		return (NULL);
-	else
-		m = malloc(size);
+	m = malloc(size);
+	if (m == NULL)
+		return (NULL);
+	ft_memset(m, 0, size);
 	return (m);
 }

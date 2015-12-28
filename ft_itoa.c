@@ -5,57 +5,53 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 12:34:52 by aouloube          #+#    #+#             */
-/*   Updated: 2015/12/01 20:09:12 by aouloube         ###   ########.fr       */
+/*   Created: 2015/12/28 12:14:25 by aouloube          #+#    #+#             */
+/*   Updated: 2015/12/28 12:14:27 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_maxnegint(int i)
+static size_t	size_int(int n)
 {
-	if (i == -2147483648)
+	size_t		size;
+
+	size = 0;
+	if (n == 0)
 		return (1);
-	else
-		return (0);
-}
-
-static int		ft_itoa_size(int n)
-{
-	int		i;
-
-	i = 0;
-	while (n)
+	while (n != 0)
 	{
-		i++;
 		n /= 10;
+		size++;
 	}
-	return (i);
+	return (size);
 }
 
 char			*ft_itoa(int n)
 {
-	char	*str;
-	int		r;
-	int		i;
-	int		t;
+	char		*str_new;
+	int			size_alloc;
+	int			i;
+	long long	nb;
+	int			is_neg;
 
+	size_alloc = size_int(n);
+	is_neg = n < 0 ? 1 : 0;
+	str_new = ft_strnew(size_alloc + is_neg);
+	if (str_new == 0)
+		return (0);
 	if (n == 0)
-		return ("0");
-	if (ft_maxnegint(n))
-		return ("-2147483648");
-	r = (n < 0) ? 0 : 1;
-	n = (n < 0) ? n * -1 : n;
-	i = ft_itoa_size(n);
-	t = n;
-	str = ft_memalloc(i);
-	while (t)
+		str_new[0] = '0';
+	else if (is_neg)
+		str_new[0] = '-';
+	i = size_alloc + is_neg - 1;
+	nb = n;
+	while (nb != 0)
 	{
-		str[i - r] = (t % 10) + 48;
+		str_new[i] = ((is_neg ? -nb : nb) % 10) + '0';
+		nb /= 10;
 		i--;
-		t /= 10;
 	}
-	if (!r)
-		str[0] = '-';
-	return (str);
+	str_new[size_alloc + is_neg] = 0;
+	return (str_new);
 }

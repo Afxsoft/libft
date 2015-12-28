@@ -5,34 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 15:30:52 by aouloube          #+#    #+#             */
-/*   Updated: 2015/11/26 15:34:09 by aouloube         ###   ########.fr       */
+/*   Created: 2015/12/28 12:17:36 by aouloube          #+#    #+#             */
+/*   Updated: 2015/12/28 12:17:39 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char	*desti;
-	unsigned char	*srce;
-	unsigned int	i;
-	unsigned char	*tmp;
+	char		*str;
+	const char	*srcc;
 
-	desti = (unsigned char *)dest;
-	srce = (unsigned char *)src;
-	i = 0;
-	tmp = (unsigned char *)malloc(sizeof(unsigned char) * n);
-	while (n > i)
+	str = (char *)dst;
+	srcc = (const char *)src;
+	if (srcc <= str)
 	{
-		tmp[i] = srce[i];
-		i++;
+		str += len - 1;
+		srcc += len - 1;
+		while (len--)
+		{
+			*str-- = *srcc--;
+		}
 	}
-	i = 0;
-	while (n > i)
+	else
 	{
-		desti[i] = tmp[i];
-		i++;
+		ft_memcpy(dst, src, len);
 	}
-	return (dest);
+	return (dst);
 }

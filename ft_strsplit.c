@@ -5,100 +5,71 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 12:31:07 by aouloube          #+#    #+#             */
-/*   Updated: 2015/12/01 20:09:26 by aouloube         ###   ########.fr       */
+/*   Created: 2015/12/28 12:17:11 by aouloube          #+#    #+#             */
+/*   Updated: 2015/12/28 12:17:13 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_countword(char const *s, char c)
+static int	ft_wordlen(char *s, char c, int n)
 {
-	int		i;
-	int		res;
-
-	res = 0;
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] != c)
-		{
-			while (s[i] && s[i] != c)
-				i++;
-			res++;
-		}
-		if (s[i] == c)
-			i++;
-	}
-	return (res);
-}
-
-static int		ft_intab(char const *s, char c, int *z)
-{
-	int		i;
+	int i;
 
 	i = 0;
-	if (s[*z] == c)
-	{
-		while (s[*z] == c)
-			(*z)++;
-	}
-	while (s[*z] != c && s[*z])
-	{
+	while (s[i + n] != c && s[i + n] != '\0')
 		i++;
-		(*z)++;
-	}
 	return (i);
 }
 
-char			**ft_malloc2dm(char **tmp, char const *s, char c)
+static int	ft_nbrword(char const *s, char c)
 {
-	int		i;
-	int		u;
-	int		z;
+	int i;
+	int j;
+	int k;
 
 	i = 0;
-	u = 0;
-	z = 0;
+	j = 0;
+	k = 0;
 	while (s[i] != '\0')
+	{
+		if (s[i] != c && k == 0)
+		{
+			j++;
+			k++;
+		}
+		else if (s[i] == c && k > 0)
+			k--;
+		i++;
+	}
+	return (j);
+}
+
+char		**ft_strsplit(char const *s, char c)
+{
+	int		i;
+	int		j;
+	int		wordlen;
+	int		nbword;
+	char	**str;
+
+	i = 0;
+	j = 0;
+	nbword = ft_nbrword(s, c);
+	str = (char **)malloc(sizeof(char *) * (nbword + 1));
+	if (!str)
+		return (NULL);
+	while (s[i] != '\0' && nbword)
 	{
 		if (s[i] != c)
 		{
-			while (s[i] != c && s[i] != '\0')
-			{
-				tmp[u][z] = s[i];
-				i++;
-				z++;
-			}
-			z = 0;
-			u++;
+			wordlen = ft_wordlen((char *)s, c, i);
+			str[j++] = ft_strsub(s, i, wordlen);
+			i = i + wordlen;
+			nbword--;
 		}
-		if (s[i] == c)
-			i++;
+		i++;
 	}
-	tmp[u] = 0;
-	return (tmp);
-}
-
-char			**ft_strsplit(char const *s, char c)
-{
-	char	**toto;
-	int		i;
-	int		x;
-	int		y;
-
-	x = 0;
-	y = 0;
-	if (!s)
-		return (NULL);
-	i = ft_countword(s, c);
-	toto = (char **)malloc(sizeof(char*) * (i + 1));
-	if (!toto)
-		return (NULL);
-	while (i > x)
-	{
-		toto[x] = (char *)malloc(sizeof(char) * (ft_intab(s, c, &y) + 1));
-		x++;
-	}
-	return (ft_malloc2dm(toto, s, c));
+	str[j] = 0;
+	return (str);
 }
