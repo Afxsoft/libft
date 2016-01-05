@@ -6,7 +6,7 @@
 #    By: aouloube <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/25 10:21:15 by aouloube          #+#    #+#              #
-#    Updated: 2015/12/01 18:01:42 by aouloube         ###   ########.fr        #
+#    Updated: 2016/01/05 11:24:33 by aouloube         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRCS = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	   ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c \
 	   ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c \
 	   ft_toupper.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstiter.c \
-	   ft_lstadd.c ft_lstmap.c
+	   ft_lstadd.c ft_lstmap.c get_next_line.c
 CFLAGS = -c -Wall -Werror -Wextra -I includes
 OBJS = ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o ft_isascii.o \
 	   ft_isdigit.o ft_isprint.o ft_itoa.o ft_memalloc.o ft_memccpy.o \
@@ -38,7 +38,7 @@ OBJS = ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o ft_isascii.o \
 	   ft_strncpy.o ft_strnequ.o ft_strnew.o ft_strnstr.o ft_strrchr.o \
 	   ft_strsplit.o ft_strstr.o ft_strsub.o ft_strtrim.o ft_tolower.o \
 	   ft_toupper.o ft_lstnew.o ft_lstdelone.o ft_lstdel.o ft_lstiter.o \
-	   ft_lstadd.o ft_lstmap.o
+	   ft_lstadd.o ft_lstmap.o get_next_line.o
 
 RM = rm -rf
 
