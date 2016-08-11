@@ -6,13 +6,13 @@
 /*   By: aouloube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 18:06:29 by aouloube          #+#    #+#             */
-/*   Updated: 2016/01/05 11:25:55 by aouloube         ###   ########.fr       */
+/*   Updated: 2016/08/11 16:23:15 by aouloube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_removestrstr(int size, char *s1)
+static	char	*ft_removestrstr(int size, char *s1)
 {
 	char	*str;
 
@@ -21,7 +21,7 @@ char	*ft_removestrstr(int size, char *s1)
 	return (str);
 }
 
-char	*ft_get_line(char *s1)
+static	char	*ft_get_line(char *s1)
 {
 	char	*str;
 	int		i;
@@ -42,7 +42,7 @@ char	*ft_get_line(char *s1)
 	return (str);
 }
 
-char	*ft_strjoinfree(char *s1, char *s2)
+static	char	*ft_strjoinfree(char *s1, char *s2)
 {
 	char	*tmp;
 
@@ -51,7 +51,7 @@ char	*ft_strjoinfree(char *s1, char *s2)
 	return (tmp);
 }
 
-int		get_next_line(int fd, char **line)
+int				get_next_line(int fd, char **line)
 {
 	static char	*storage = NULL;
 	char		*tmp;
